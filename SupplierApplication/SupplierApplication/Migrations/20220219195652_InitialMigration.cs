@@ -2,7 +2,7 @@
 
 namespace SupplierApplication.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -10,7 +10,8 @@ namespace SupplierApplication.Migrations
                 name: "GetSuppliers",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(20)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(50)", nullable: true),
                     Address = table.Column<string>(type: "nvarchar(50)", nullable: true)

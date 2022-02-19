@@ -20,8 +20,10 @@ namespace SupplierApplication.Migrations
 
             modelBuilder.Entity("SupplierApplication.Models.Supplier", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(50)");

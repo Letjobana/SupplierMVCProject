@@ -9,8 +9,8 @@ using SupplierApplication.Persistance;
 namespace SupplierApplication.Migrations
 {
     [DbContext(typeof(SupplierDbContex))]
-    [Migration("20220219192548_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220219195652_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,8 +22,10 @@ namespace SupplierApplication.Migrations
 
             modelBuilder.Entity("SupplierApplication.Models.Supplier", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(50)");
