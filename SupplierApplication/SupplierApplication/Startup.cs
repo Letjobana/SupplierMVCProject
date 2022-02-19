@@ -26,7 +26,7 @@ namespace SupplierApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddDbContext<SupplierDbContex>(options => options.UseSqlServer(Configuration.GetConnectionString("")));
+            services.AddDbContext<SupplierDbContex>(options => options.UseSqlServer(Configuration.GetConnectionString("DBConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
